@@ -7,8 +7,8 @@ var taskList = [
 	
 ];
 
-router.get('/', function(req, res, next){
-	var taskList = taskService.getAll();
+router.get('/', async function(req, res, next){
+	var taskList = await taskService.getAll();
 	res.json(taskList);
 });
 
@@ -24,12 +24,10 @@ router.get('/:id', function(req, res, next){
 	}
 });
 
-router.post('/', function(req, res, next){
+router.post('/', async function(req, res, next){
 	var newTaskData = req.body;
-	if (newTaskData.id === 0)
-		newTaskData.id = uuid();
-	taskList.push(newTaskData);
-	res.status(201).json(newTaskData);
+	var newTask = await taskService.addNew(newTaskData);
+	res.status(201).json(newTask);
 });
 
 router.put('/:id', function(req, res, next){

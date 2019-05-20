@@ -4,11 +4,31 @@ var fs = require('fs'),
 var dataFile = path.join(__dirname, '../data/taskData.json');
 
 function getData(){
-	var rawData = fs.readFileSync(dataFile, {encoding : 'utf8'});
-	var result = JSON.parse(rawData);
-	return result;
+	var p = new Promise(function(resolveFn, rejectFn){
+		fs.readFile(dataFile, {encoding : 'utf8'}, function(err, rawData){
+			if (err){
+				return rejectFn(err);
+			}
+			var result = JSON.parse(rawData);
+			resolveFn(result);
+		});	
+	})
+	return p;
+}
+
+function saveData(data){
+	var p = new Promise(function(resolveFn, rejectFn){
+		fs.writeFile(dataFile, JSON.stringify(data), function(err){
+			if (err){
+				return rejectFn(err);
+			}
+			resolveFn();
+		});
+	});
 }
 
 module.exports = {
-	getData
+	getData,
+	saveData
 };
+

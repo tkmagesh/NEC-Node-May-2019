@@ -1,5 +1,1 @@
-[
-	{"id" : "860b64c6-35f2-4456-8c0f-4f1e38314ec2", "name" : "Learn JavaScript", "isCompleted" : false },
-	{"id" : "900694ea-a34d-4907-8649-9b47051dad5f", "name" : "Explore Bangalore", "isCompleted" : true },
-	{"id" : "e4b3e295-215e-481f-a762-406cb31ab042", "name" : "Master Node.js", "isCompleted" : false }
-]
+[{"id":"860b64c6-35f2-4456-8c0f-4f1e38314ec2","name":"Learn JavaScript","isCompleted":false},{"id":"900694ea-a34d-4907-8649-9b47051dad5f","name":"Explore Bangalore","isCompleted":true},{"id":"e4b3e295-215e-481f-a762-406cb31ab042","name":"Master Node.js","isCompleted":false},{"id":"94a85fec-d5c4-4eb1-9c85-bcb0495d1e27","name":"Play with promises","isCompleted":false}]
