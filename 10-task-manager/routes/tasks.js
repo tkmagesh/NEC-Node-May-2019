@@ -2,9 +2,7 @@ var express = require('express'),
 	router = express.Router();
 
 var taskList = [
-	{id : 1, name : 'Learn JavaScript', isCompleted : false},
-	{id : 2, name : 'Explore Bangalore', isCompleted : true},
-	{id : 3, name : 'Master Node.js', isCompleted : false},
+	
 ];
 
 router.get('/', function(req, res, next){
@@ -22,5 +20,13 @@ router.get('/:id', function(req, res, next){
 		res.json(result);
 	}
 });
+
+router.post('/', function(req, res, next){
+	//incoming data = { id : 0, name : '<task name>', isCompleted : false};
+	//req.body will have the incoming data
+	//generate new id and assign if id === 0
+	//add the item to the array
+	//return 201 status with the newly created task data
+})
 
 module.exports = router;
